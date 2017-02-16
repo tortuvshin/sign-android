@@ -3,34 +3,54 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_animal"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Амьтад" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_answer"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Асуух төлөөний үг" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_disaster"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Байгалын үзэгдэл" />
+        <item
+            android:id="@+id/nav_family"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Гэр бүл" />
+        <item
+            android:id="@+id/nav_fruit"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Жимс ногоо" />
+        <item
+            android:id="@+id/nav_greeting"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Мэндчилгээ" />
+        <item
+            android:id="@+id/nav_profession"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Мэргэжил" />
+        <item
+            android:id="@+id/nav_emotion"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Сэтгэл хөдлөл" />
+        <item
+            android:id="@+id/nav_number"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Тоо" />
+        <item
+            android:id="@+id/nav_clotes"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Хувцас" />
+        <item
+            android:id="@+id/nav_abc"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Цагаан толгой" />
+        <item
+            android:id="@+id/nav_color"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Өнгө" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
 
 </menu>

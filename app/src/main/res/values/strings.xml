@@ -9,4 +9,5 @@
     <string name="title_activity_details">DetailsActivity</string>
     <string name="title_activity_details_number">DetailsNumberActivity</string>
     <string name="title_activity_details_letter">DetailsLetterActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
 </resources>

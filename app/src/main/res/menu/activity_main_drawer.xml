@@ -3,53 +3,21 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_animal"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Амьтад" />
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_menu_home"
+            android:title="Танилцуулга" />
         <item
-            android:id="@+id/nav_answer"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Асуух төлөөний үг" />
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="Тохиргоо" />
         <item
-            android:id="@+id/nav_disaster"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Байгалын үзэгдэл" />
+            android:id="@+id/nav_rate"
+            android:icon="@drawable/ic_menu_like"
+            android:title="Үнэлгээ өгөх" />
         <item
-            android:id="@+id/nav_family"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Гэр бүл" />
-        <item
-            android:id="@+id/nav_fruit"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Жимс ногоо" />
-        <item
-            android:id="@+id/nav_greeting"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Мэндчилгээ" />
-        <item
-            android:id="@+id/nav_profession"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Мэргэжил" />
-        <item
-            android:id="@+id/nav_emotion"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Сэтгэл хөдлөл" />
-        <item
-            android:id="@+id/nav_number"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Тоо" />
-        <item
-            android:id="@+id/nav_clotes"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Хувцас" />
-        <item
-            android:id="@+id/nav_abc"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Цагаан толгой" />
-        <item
-            android:id="@+id/nav_color"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Өнгө" />
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="Тухай" />
     </group>
 
 

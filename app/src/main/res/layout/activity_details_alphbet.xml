@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="mn.signlanguage.DetailsLetterActivity">
+    tools:context="mn.signlanguage.DetailsAlphbetActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_details_letter" />
+    <include layout="@layout/content_details_alphbet" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

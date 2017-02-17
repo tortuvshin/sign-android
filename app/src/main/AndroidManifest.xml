@@ -31,7 +31,7 @@
             android:label="@string/title_activity_details_number"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".DetailsLetterActivity"
+            android:name=".DetailsAlphbetActivity"
             android:label="@string/title_activity_details_letter"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

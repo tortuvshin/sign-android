@@ -1,5 +1,6 @@
 package mn.signlanguage;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -80,10 +81,18 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_animal) {
-            // Handle the camera action
-        } else if (id == R.id.nav_answer) {
+        if (id == R.id.nav_number) {
 
+            Intent intent = new Intent(MainActivity.this, DetailsNumberActivity.class);
+            startActivity(intent);
+        }
+         else if (id == R.id.nav_abc) {
+            Intent intent = new Intent(MainActivity.this, DetailsAlphabetActivity.class);
+            startActivity(intent);
+        } else {
+
+            Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

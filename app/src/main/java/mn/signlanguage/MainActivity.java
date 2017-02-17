@@ -1,6 +1,8 @@
 package mn.signlanguage;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +21,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -26,6 +29,11 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    public static final String PREFER_NAME = "Category";
+
+    private SharedPreferences sharedPreferences;
+    private Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +54,20 @@ public class MainActivity extends AppCompatActivity
         String[] myDataset={"Амьтад","Асуух төлөөний үг","Байгалийн үзэгдэл","Гэр бүл",
                 "Жимс ногоо","Мэндчилгээ","Мэргэжил","Сэтгэл хөдлөл",
                 "Тоо", "Хувцас", "Цагаан толгой", "Өнгө"};
+
         int[]myImages = {R.drawable.animal ,R.drawable.pronoun ,R.drawable.nature,
                 R.drawable.family ,R.drawable.fruit ,R.drawable.greeting ,R.drawable.profession,
                 R.drawable.emotion ,R.drawable.number, R.drawable.clothes, R.drawable.alphabet, R.drawable.color};
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new GridLayoutManager(this,2);
+        mLayoutManager = new GridLayoutManager(this, 3);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new MyAdapter(myDataset,myImages);
         mRecyclerView.setAdapter(mAdapter);
+
+
+        sharedPreferences = getSharedPreferences(PREFER_NAME, 0);
+        editor = sharedPreferences.edit();
 
     }
     public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
@@ -73,6 +86,11 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
+                String a = mTextView.getText().toString();
+                editor.putString("select", a);
+                editor.commit();
+
+                Toast.makeText(getApplicationContext(), a, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
                 startActivity(intent);
             }

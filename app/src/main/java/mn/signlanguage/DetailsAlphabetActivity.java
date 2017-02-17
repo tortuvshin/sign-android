@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DetailsAlphabetActivity extends ActionBarActivity {
+public class DetailsAlphabetActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -37,7 +37,7 @@ public class DetailsAlphabetActivity extends ActionBarActivity {
                 "Ии","Йй","Кк","Лл","Мм","Нн","Оо","Өө","Пп",
                 "Рр","Сс","Тт","Уу","Үү","Фф","Хх","Цц","Чч",
                 "Шш","Щщ","ъ","ь","ы","Ээ","Юю","Яя"};
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.alphabet_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new GridLayoutManager(this,3);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -52,7 +52,7 @@ public class DetailsAlphabetActivity extends ActionBarActivity {
             public TextView mTextView;
             public ViewHolder(View v) {
                 super(v);
-                mTextView = (TextView)v.findViewById(R.id.txt);
+                mTextView = (TextView)v.findViewById(R.id.alphabet);
             }
         }
 

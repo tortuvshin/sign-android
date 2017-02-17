@@ -55,18 +55,26 @@ public class MainActivity extends AppCompatActivity
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new MyAdapter(myDataset,myImages);
         mRecyclerView.setAdapter(mAdapter);
+
     }
     public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         private String[] mDataset;
         private int[] mImages;
 
-        public  class ViewHolder extends RecyclerView.ViewHolder {
+        public  class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             public TextView mTextView;
             public ImageView mImageView;
             public ViewHolder(View v) {
                 super(v);
+                v.setOnClickListener(this);
                 mTextView = (TextView)v.findViewById(R.id.txt);
                 mImageView = (ImageView)v.findViewById(R.id.img);
+            }
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+                startActivity(intent);
             }
         }
 

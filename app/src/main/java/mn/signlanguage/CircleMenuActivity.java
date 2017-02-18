@@ -19,28 +19,40 @@ public class CircleMenuActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_circle_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        CircleMenu flingCircleMenuLayout = (CircleMenu) findViewById(R.id.circlelayout);
+        CircleMenu circleMenu = (CircleMenu) findViewById(R.id.circlelayout);
 
-        View item1 = LayoutInflater.from(this).inflate(R.layout.menu_item_layout,flingCircleMenuLayout,false);
-        View item2 = LayoutInflater.from(this).inflate(R.layout.menu_item_layout,flingCircleMenuLayout,false);
-        View item3 = LayoutInflater.from(this).inflate(R.layout.menu_item_layout,flingCircleMenuLayout,false);
-        View item4 = LayoutInflater.from(this).inflate(R.layout.menu_item_layout,flingCircleMenuLayout,false);
-        View item5 = LayoutInflater.from(this).inflate(R.layout.menu_item_layout,flingCircleMenuLayout,false);
-        View item6 = LayoutInflater.from(this).inflate(R.layout.menu_item_layout,flingCircleMenuLayout,false);
+        View catAnimal = LayoutInflater.from(this).inflate(R.layout.circle_menu_animal,circleMenu,false);
+        View catAlphabet = LayoutInflater.from(this).inflate(R.layout.circle_menu_alphabet,circleMenu,false);
+        View catClothes = LayoutInflater.from(this).inflate(R.layout.circle_menu_clothes,circleMenu,false);
+        View catColor = LayoutInflater.from(this).inflate(R.layout.circle_menu_color,circleMenu,false);
+        View catEmotion = LayoutInflater.from(this).inflate(R.layout.circle_menu_emotion,circleMenu,false);
+        View catFamily = LayoutInflater.from(this).inflate(R.layout.circle_menu_family,circleMenu,false);
+        View catFruit = LayoutInflater.from(this).inflate(R.layout.circle_menu_fruit,circleMenu,false);
+        View catGreeting = LayoutInflater.from(this).inflate(R.layout.circle_menu_greeting,circleMenu,false);
+        View catNature = LayoutInflater.from(this).inflate(R.layout.circle_menu_nature,circleMenu,false);
+        View catNumber = LayoutInflater.from(this).inflate(R.layout.circle_menu_number,circleMenu,false);
+        View catProfession = LayoutInflater.from(this).inflate(R.layout.circle_menu_profession,circleMenu,false);
+        View catPronoun = LayoutInflater.from(this).inflate(R.layout.circle_menu_pronoun,circleMenu,false);
 
         List<View> childList = new ArrayList<>();
-        childList.add(item1);
-        childList.add(item2);
-        childList.add(item3);
-        childList.add(item4);
-        childList.add(item5);
-        childList.add(item6);
+        childList.add(catAlphabet);
+        childList.add(catAnimal);
+        childList.add(catClothes);
+        childList.add(catColor);
+        childList.add(catEmotion);
+        childList.add(catFamily);
+        childList.add(catFruit);
+        childList.add(catGreeting);
+        childList.add(catNature);
+        childList.add(catNumber);
+        childList.add(catProfession);
+        childList.add(catPronoun);
 
         for(View view :childList){
             view.setOnClickListener(this);
         }
 
-        flingCircleMenuLayout.setChildViewsList(childList);
+        circleMenu.setChildViewsList(childList);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package mn.signlanguage;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +20,7 @@ public class CircleMenuActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_circle_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         CircleMenu circleMenu = (CircleMenu) findViewById(R.id.circlelayout);
 
         View catAnimal = LayoutInflater.from(this).inflate(R.layout.circle_menu_animal,circleMenu,false);
@@ -57,6 +59,7 @@ public class CircleMenuActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-
+        Intent intent = new Intent(CircleMenuActivity.this, DetailsActivity.class);
+        startActivity(intent);
     }
 }

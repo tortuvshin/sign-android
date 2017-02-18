@@ -10,4 +10,5 @@
     <string name="title_activity_details_number">DetailsNumberActivity</string>
     <string name="title_activity_details_letter">DetailsLetterActivity</string>
     <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_circle_menu">CircleMenuActivity</string>
 </resources>

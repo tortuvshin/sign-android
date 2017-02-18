@@ -157,7 +157,8 @@ public class MainActivity extends AppCompatActivity
 
         }
          else if (id == R.id.nav_rate) {
-
+            Intent intent = new Intent(MainActivity.this, CircleMenuActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_about){
             Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);

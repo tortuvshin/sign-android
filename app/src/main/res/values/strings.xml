@@ -5,10 +5,26 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_splash_screen">Дохионы хэл</string>
 
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_details">DetailsActivity</string>
-    <string name="title_activity_details_number">DetailsNumberActivity</string>
-    <string name="title_activity_details_letter">DetailsLetterActivity</string>
-    <string name="title_activity_about">AboutActivity</string>
-    <string name="title_activity_circle_menu">CircleMenuActivity</string>
+    <string name="action_settings">Тохиргоо</string>
+    <string name="title_activity_details">Дэлгэрэнгүй</string>
+    <string name="title_activity_details_number">Тоо</string>
+    <string name="title_activity_details_letter">Цагаан толгой</string>
+    <string name="title_activity_about">Тухай</string>
+    <string name="title_activity_circle_menu">Цэс</string>
+
+    <string name="cat_alphabet">Цагаан толгой</string>
+    <string name="cat_animal">Амьтан</string>
+    <string name="cat_clothes">Хувцас</string>
+    <string name="cat_color">Өнгө</string>
+    <string name="cat_emotion">Сэтгэл хөдлөл</string>
+    <string name="cat_family">Гэр бүл</string>
+    <string name="cat_fruit">Жимс ногоо</string>
+    <string name="cat_greeting">Мэндчилгээ</string>
+    <string name="cat_nature">Байгалийн үзэгдэл</string>
+    <string name="cat_number">Тоо</string>
+    <string name="cat_profession">Мэргэжил</string>
+    <string name="cat_pronoun">Асуух төлөөний үг</string>
+
+
+
 </resources>

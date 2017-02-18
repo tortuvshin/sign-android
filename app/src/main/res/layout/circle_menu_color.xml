@@ -11,14 +11,5 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/color" />
 
-    <TextView
-        android:id="@+id/item_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/item_image_view"
-        android:layout_centerHorizontal="true"
-        android:textSize="17sp"
-        android:text="@string/cat_color"
-        android:textColor="@android:color/white" />
 </RelativeLayout>
 

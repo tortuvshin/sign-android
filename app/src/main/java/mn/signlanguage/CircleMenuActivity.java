@@ -59,6 +59,7 @@ public class CircleMenuActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
+
         Intent intent = new Intent(CircleMenuActivity.this, DetailsActivity.class);
         startActivity(intent);
     }

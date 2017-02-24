@@ -12,9 +12,13 @@
         android:src="@drawable/emotion" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/item_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_image_view"
+        android:layout_centerHorizontal="true"
+        android:textSize="1sp"
         android:text="@string/cat_emotion"
-        android:textSize="1dp"/>
+        android:textColor="@android:color/white" />
 </RelativeLayout>
 

@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,8 +61,9 @@ public class CircleMenuActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
+        TextView cat = (TextView)findViewById(R.id.item_text_view);
+        String a = cat.getText().toString();
+        Toast.makeText(getApplicationContext(), a, Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(CircleMenuActivity.this, DetailsActivity.class);
-        startActivity(intent);
     }
 }

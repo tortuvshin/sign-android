@@ -41,6 +41,10 @@
         <activity
             android:name=".CircleMenuActivity"
             android:label="@string/title_activity_circle_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ImageActivity"
+            android:label="@string/title_activity_image"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

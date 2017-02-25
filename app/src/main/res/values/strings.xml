@@ -31,7 +31,7 @@
 
     <string name="slide_title">САЙН УУ!</string>
     <string name="slide_desc">ДОХИОНЫ ХЭЛНИЙ ХӨТӨЧ!</string>
-
+    <string name="title_activity_image">ImageActivity</string>
 
 
 </resources>

@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Path;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -35,10 +37,13 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import dalvik.system.PathClassLoader;
 
@@ -133,42 +138,26 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
 
-//        String uri = "@drawable/animal";
-//
-//        int imageRes = getResources().getIdentifier(uri, null, getPackageName());
-//
-//        img = (ImageView) findViewById(R.id.imageView2);
-//        Drawable res = getResources().getDrawable(imageRes);
-//
-//        img.setImageDrawable(res);
-//
-//        AssetManager manager = getAssets();
-//
-//        InputStream open = null;
-//        try {
-//            open = manager.open("animal.png");
-//            Bitmap bitmap = BitmapFactory.decodeStream(open);
-//            img = (ImageView) findViewById(R.id.imageView2);
-//            img.setImageBitmap(bitmap);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if (open != null) {
-//                try {
-//                    open.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-        Uri path = Uri.parse("android.resource://mn.signlanguage/test/");
-        File file = new File(path.getPath());
-
-        boolean b = false;
-        if(file.exists())
-            b = true;
-
-
+        try {
+            getImages("catAlphabet");
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    /**
+     * assets folder -оос зуругнууд авах
+     *
+     * @param folderName зураг агуулагдах folder-ын нэр
+     * @return зураг болон зургийн нэр агуулах {@link Map<String, Drawable>}
+     * */
+    private Map<String, Drawable> getImages(String folderName) throws IOException {
+        Map<String, Drawable> drawableImages = new HashMap<String, Drawable>();
+        for(String fileName: getAssets().list(folderName))
+            if(fileName.endsWith(".jpg")) {
+                InputStream is = getAssets().open(fileName);
+                drawableImages.put(fileName.replace(".jpg", ""), Drawable.createFromStream(is, null));
+            }
+        return drawableImages;
     }
 
 

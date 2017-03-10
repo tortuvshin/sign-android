@@ -9,10 +9,10 @@
         android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/animal" />
+        android:src="@drawable/cat_animals" />
 
     <TextView
-        android:id="@+id/item_text_view"
+        android:id="@+id/animal_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/item_image_view"
@@ -20,5 +20,5 @@
         android:textSize="1sp"
         android:text="@string/cat_animal"
         android:textColor="@android:color/white" />
-    </RelativeLayout>
+</RelativeLayout>
 

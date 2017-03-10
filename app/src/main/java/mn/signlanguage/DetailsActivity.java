@@ -139,14 +139,13 @@ public class DetailsActivity extends AppCompatActivity {
         });
 
         try {
-            getImages("catAlphabet");
+            getImages("cat_alphabet");
         }catch (IOException e){
             e.printStackTrace();
         }
     }
     /**
      * assets folder -оос зуругнууд авах
-     *
      * @param folderName зураг агуулагдах folder-ын нэр
      * @return зураг болон зургийн нэр агуулах {@link Map<String, Drawable>}
      * */

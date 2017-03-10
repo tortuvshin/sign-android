@@ -45,7 +45,8 @@
         <activity
             android:name=".ImageActivity"
             android:label="@string/title_activity_image"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ItemListActivity"></activity>
     </application>
 
 </manifest>

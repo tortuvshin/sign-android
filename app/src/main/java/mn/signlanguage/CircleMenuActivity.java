@@ -1,6 +1,7 @@
 package mn.signlanguage;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,14 +15,22 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CircleMenuActivity extends AppCompatActivity implements View.OnClickListener{
+public class CircleMenuActivity extends AppCompatActivity{
 
+
+    public static final String PREFER_NAME = "Category";
+
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circle_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        sharedPreferences = getSharedPreferences(PREFER_NAME, 0);
+        editor = sharedPreferences.edit();
 
         CircleMenu circleMenu = (CircleMenu) findViewById(R.id.circlelayout);
 
@@ -52,18 +61,123 @@ public class CircleMenuActivity extends AppCompatActivity implements View.OnClic
         childList.add(catProfession);
         childList.add(catPronoun);
 
-        for(View view :childList){
-            view.setOnClickListener(this);
-        }
 
         circleMenu.setChildViewsList(childList);
+
+        catAlphabet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.alphabet_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
+
+        catAnimal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.animal_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
+
+        catClothes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.clothes_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
+        catColor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.color_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
+
+        catEmotion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.emotion_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
+
+        catFamily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.family_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
+
+        catFruit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.fruit_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
+
+        catGreeting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.greeting_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
+
+        catNature.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.nature_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
+
+
+        catNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.number_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
+
+
+        catProfession.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.profession_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
+
+        catPronoun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.pronoun_text_view);
+                String a = cat.getText().toString();
+                startDetails(a);
+            }
+        });
     }
 
-    @Override
-    public void onClick(View v) {
-        TextView cat = (TextView)findViewById(R.id.item_text_view);
-        String a = cat.getText().toString();
-        Toast.makeText(getApplicationContext(), a, Toast.LENGTH_SHORT).show();
-
+    public void startDetails(String a){
+        editor.putString("select", a);
+        editor.commit();
+        Intent intent = new Intent(CircleMenuActivity.this, ItemListActivity.class);
+        startActivity(intent);
     }
 }

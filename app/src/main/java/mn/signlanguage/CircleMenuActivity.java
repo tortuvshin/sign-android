@@ -177,7 +177,7 @@ public class CircleMenuActivity extends AppCompatActivity{
     public void startDetails(String a){
         editor.putString("select", a);
         editor.commit();
-        Intent intent = new Intent(CircleMenuActivity.this, DetailsActivity.class);
+        Intent intent = new Intent(CircleMenuActivity.this, ItemListActivity.class);
         startActivity(intent);
     }
 }

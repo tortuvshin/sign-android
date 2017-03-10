@@ -93,9 +93,18 @@ public class ItemListActivity extends AppCompatActivity {
 
                     String filename = filelist[i];
                     Log.d("File name: ", filename);
+
                 }
             }
+            if (filelistInSubfolder == null) {
 
+            } else {
+                for (int i=0; i<filelistInSubfolder.length; i++) {
+
+                    String filename = filelistInSubfolder[i];
+                    Log.d("File sub name: ", filename);
+                }
+            }
             // if(filelistInSubfolder == null) ............
 
         } catch (IOException e) {

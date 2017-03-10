@@ -28,6 +28,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
+
 import static mn.signlanguage.MainActivity.PREFER_NAME;
 
 public class ItemListActivity extends AppCompatActivity {
@@ -110,12 +113,12 @@ public class ItemListActivity extends AppCompatActivity {
 
         public  class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             public TextView mTextView;
-            public ImageView mImageView;
+            public GifImageView mImageView;
             public ViewHolder(View v) {
                 super(v);
                 v.setOnClickListener(this);
                 mTextView = (TextView)v.findViewById(R.id.txt);
-                mImageView = (ImageView)v.findViewById(R.id.img);
+                mImageView = (GifImageView) v.findViewById(R.id.img);
             }
 
             @Override
@@ -140,7 +143,8 @@ public class ItemListActivity extends AppCompatActivity {
 
         public void onBindViewHolder(ViewHolder holder, int position) {
             holder.mTextView.setText(mDataset[position]);
-            holder.mImageView.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mImages[position]));
+//            holder.mImageView.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mImages[position]));
+            holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
         }
 
         public int getItemCount() {
@@ -148,6 +152,15 @@ public class ItemListActivity extends AppCompatActivity {
         }
     }
 
+    public GifDrawable loadGifDrawable(Context context, String path) {
+        GifDrawable gifFromAssets = null;
+        try {
+            gifFromAssets = new GifDrawable( getAssets(), path );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return gifFromAssets;
+    }
     public Bitmap loadBitmapFromAssets(Context context, String path)
     {
         InputStream stream = null;

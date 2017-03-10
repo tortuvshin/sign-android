@@ -81,7 +81,6 @@ public class DetailsActivity extends AppCompatActivity {
         categories.put("Цагаан толгой", "alphabet");
         categories.put("Өнгө", "color");
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         SharedPreferences prefs = getSharedPreferences(PREFER_NAME, 0);
         String select = prefs.getString("select", "");
@@ -158,7 +157,6 @@ public class DetailsActivity extends AppCompatActivity {
             }
         return drawableImages;
     }
-
 
     private void addBottomDots(int currentPage) {
         dots = new TextView[layouts.length];

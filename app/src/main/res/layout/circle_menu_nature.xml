@@ -13,7 +13,7 @@
         />
 
     <TextView
-        android:id="@+id/item_text_view"
+        android:id="@+id/nature_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/item_image_view"

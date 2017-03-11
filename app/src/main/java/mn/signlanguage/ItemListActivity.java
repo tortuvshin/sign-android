@@ -161,6 +161,7 @@ public class ItemListActivity extends AppCompatActivity {
         }
         return gifFromAssets;
     }
+
     public Bitmap loadBitmapFromAssets(Context context, String path)
     {
         InputStream stream = null;

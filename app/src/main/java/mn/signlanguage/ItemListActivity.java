@@ -1,8 +1,11 @@
 package mn.signlanguage;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,14 +28,18 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
+
 import static mn.signlanguage.MainActivity.PREFER_NAME;
 
 public class ItemListActivity extends AppCompatActivity {
 
-    private Toolbar mToolbar;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    String[] filelistInSubfolder;
+    String catName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +48,7 @@ public class ItemListActivity extends AppCompatActivity {
         initComponents();
     }
 
-
     private void initComponents(){
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
 
         String[] myDataset={"1","2","3","4","5","6","7","8","9",
                 "10","11","12","13","14","15","16","17","18","19",
@@ -52,8 +57,6 @@ public class ItemListActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new GridLayoutManager(this,3);
         mRecyclerView.setLayoutManager(mLayoutManager);
-//        mAdapter = new MyAdapter(myDataset);
-        mRecyclerView.setAdapter(mAdapter);
 
         HashMap<String, String> categories = new HashMap<>();
         categories.put("Амьтад", "catAnimals");
@@ -72,76 +75,50 @@ public class ItemListActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         SharedPreferences prefs = getSharedPreferences(PREFER_NAME, 0);
         String select = prefs.getString("select", "");
-        String catName = categories.get(select);
+        catName = categories.get(select);
         Toast.makeText(getApplicationContext(), catName, Toast.LENGTH_LONG).show();
         getSupportActionBar().setTitle(select);
-//        try {
-//            getImages(catName);
-//        }catch (IOException e){
-//            e.printStackTrace();
-//        }
+
         final AssetManager assetManager = getAssets();
+
         try {
-
             String[] filelist = assetManager.list("");
-
-            String[] filelistInSubfolder = assetManager.list(catName);
+            filelistInSubfolder = assetManager.list(catName);
             if (filelist == null) {
-
             } else {
                 for (int i=0; i<filelist.length; i++) {
-
                     String filename = filelist[i];
                     Log.d("File name: ", filename);
-
                 }
             }
             if (filelistInSubfolder == null) {
-
             } else {
                 for (int i=0; i<filelistInSubfolder.length; i++) {
-
                     String filename = filelistInSubfolder[i];
                     Log.d("File sub name: ", filename);
                 }
             }
-            // if(filelistInSubfolder == null) ............
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        mAdapter = new MyAdapter(filelistInSubfolder,filelistInSubfolder);
+        mRecyclerView.setAdapter(mAdapter);
     }
-
-    /**
-     * assets folder -оос зуругнууд авах
-     * @param folderName зураг агуулагдах folder-ын нэр
-     * @return зураг болон зургийн нэр агуулах {@link Map <String,  Drawable >}
-     * */
-    private Map<String, Drawable> getImages(String folderName) throws IOException {
-        Map<String, Drawable> drawableImages = new HashMap<String, Drawable>();
-        for(String fileName: getAssets().list(folderName))
-            if(fileName.endsWith(".jpg")) {
-                InputStream is = getAssets().open(fileName);
-                drawableImages.put(fileName.replace(".jpg", ""), Drawable.createFromStream(is, null));
-            }
-
-            Log.d("Categories ","a");
-        return drawableImages;
-    }
-
 
     public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         private String[] mDataset;
-        private int[] mImages;
+        private String[] mImages;
 
         public  class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             public TextView mTextView;
-            public ImageView mImageView;
+            public GifImageView mImageView;
             public ViewHolder(View v) {
                 super(v);
                 v.setOnClickListener(this);
                 mTextView = (TextView)v.findViewById(R.id.txt);
-                mImageView = (ImageView)v.findViewById(R.id.img);
+                mImageView = (GifImageView) v.findViewById(R.id.img);
             }
 
             @Override
@@ -150,7 +127,7 @@ public class ItemListActivity extends AppCompatActivity {
             }
         }
 
-        public MyAdapter(String[] myDataset, int[] myImages) {
+        public MyAdapter(String[] myDataset, String[] myImages) {
             mDataset = myDataset;
             mImages = myImages;
         }
@@ -166,12 +143,44 @@ public class ItemListActivity extends AppCompatActivity {
 
         public void onBindViewHolder(ViewHolder holder, int position) {
             holder.mTextView.setText(mDataset[position]);
-            holder.mImageView.setImageResource(mImages[position]);
+//            holder.mImageView.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mImages[position]));
+            holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
         }
 
         public int getItemCount() {
             return mDataset.length;
         }
+    }
+
+    public GifDrawable loadGifDrawable(Context context, String path) {
+        GifDrawable gifFromAssets = null;
+        try {
+            gifFromAssets = new GifDrawable( getAssets(), path );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return gifFromAssets;
+    }
+
+    public Bitmap loadBitmapFromAssets(Context context, String path)
+    {
+        InputStream stream = null;
+        try
+        {
+            stream = context.getAssets().open(path);
+            return BitmapFactory.decodeStream(stream);
+        }
+        catch (Exception ignored) {} finally
+        {
+            try
+            {
+                if(stream != null)
+                {
+                    stream.close();
+                }
+            } catch (Exception ignored) {}
+        }
+        return null;
     }
 
     @Override

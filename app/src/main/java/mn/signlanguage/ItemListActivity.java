@@ -113,12 +113,12 @@ public class ItemListActivity extends AppCompatActivity {
 
         public  class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             public TextView mTextView;
-            public GifImageView mImageView;
+            public ImageView mImageView;
             public ViewHolder(View v) {
                 super(v);
                 v.setOnClickListener(this);
                 mTextView = (TextView)v.findViewById(R.id.txt);
-                mImageView = (GifImageView) v.findViewById(R.id.img);
+                mImageView = (ImageView) v.findViewById(R.id.img);
             }
 
             @Override

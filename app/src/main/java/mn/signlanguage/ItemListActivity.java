@@ -88,19 +88,19 @@ public class ItemListActivity extends AppCompatActivity {
             } else {
                 for (int i=0; i<filelist.length; i++) {
                     String filename = filelist[i];
-                    Log.d("File name: ", filename);
                 }
             }
             if (filelistInSubfolder == null) {
             } else {
                 for (int i=0; i<filelistInSubfolder.length; i++) {
                     String filename = filelistInSubfolder[i];
-                    Log.d("File sub name: ", filename);
                 }
             }
 
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NullPointerException npe) {
+            Toast.makeText(getApplicationContext(), "Алдаа гарлаа !!!", Toast.LENGTH_LONG).show();
         }
 
         mAdapter = new MyAdapter(filelistInSubfolder,filelistInSubfolder);
@@ -113,12 +113,12 @@ public class ItemListActivity extends AppCompatActivity {
 
         public  class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             public TextView mTextView;
-            public GifImageView mImageView;
+            public ImageView mImageView;
             public ViewHolder(View v) {
                 super(v);
                 v.setOnClickListener(this);
                 mTextView = (TextView)v.findViewById(R.id.txt);
-                mImageView = (GifImageView) v.findViewById(R.id.img);
+                mImageView = (ImageView) v.findViewById(R.id.img);
             }
 
             @Override

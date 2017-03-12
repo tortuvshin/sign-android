@@ -88,19 +88,19 @@ public class ItemListActivity extends AppCompatActivity {
             } else {
                 for (int i=0; i<filelist.length; i++) {
                     String filename = filelist[i];
-                    Log.d("File name: ", filename);
                 }
             }
             if (filelistInSubfolder == null) {
             } else {
                 for (int i=0; i<filelistInSubfolder.length; i++) {
                     String filename = filelistInSubfolder[i];
-                    Log.d("File sub name: ", filename);
                 }
             }
 
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NullPointerException npe) {
+            Toast.makeText(getApplicationContext(), "Алдаа гарлаа !!!", Toast.LENGTH_LONG).show();
         }
 
         mAdapter = new MyAdapter(filelistInSubfolder,filelistInSubfolder);

@@ -3,22 +3,20 @@ package mn.signlanguage;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import mn.signlanguage.widgets.CircleMenu;
+
 public class CircleMenuActivity extends AppCompatActivity{
 
-
-    public static final String PREFER_NAME = "Category";
+    public static final String PREFER_NAME = "SignLanguage";
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
@@ -175,7 +173,7 @@ public class CircleMenuActivity extends AppCompatActivity{
     }
 
     public void startDetails(String a){
-        editor.putString("select", a);
+        editor.putString("category", a);
         editor.commit();
         Intent intent = new Intent(CircleMenuActivity.this, ItemListActivity.class);
         startActivity(intent);

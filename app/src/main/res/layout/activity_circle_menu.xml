@@ -5,11 +5,11 @@
     android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <mn.signlanguage.CircleMenu
+    <mn.signlanguage.widgets.CircleMenu
         android:id="@+id/circlelayout"
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:background="@drawable/bg_circle"
         android:layout_centerInParent="true">
-    </mn.signlanguage.CircleMenu>
+    </mn.signlanguage.widgets.CircleMenu>
 </RelativeLayout>

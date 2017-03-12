@@ -27,24 +27,12 @@
             android:label="@string/title_activity_details"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".DetailsNumberActivity"
-            android:label="@string/title_activity_details_number"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".DetailsAlphabetActivity"
-            android:label="@string/title_activity_details_letter"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".AboutActivity"
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CircleMenuActivity"
             android:label="@string/title_activity_circle_menu"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ImageActivity"
-            android:label="@string/title_activity_image"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ItemListActivity"></activity>
     </application>

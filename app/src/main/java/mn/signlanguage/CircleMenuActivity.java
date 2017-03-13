@@ -59,7 +59,6 @@ public class CircleMenuActivity extends AppCompatActivity{
         childList.add(catProfession);
         childList.add(catPronoun);
 
-
         circleMenu.setChildViewsList(childList);
 
         catAlphabet.setOnClickListener(new View.OnClickListener() {

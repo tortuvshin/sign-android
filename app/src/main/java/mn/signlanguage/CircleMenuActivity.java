@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,7 @@ public class CircleMenuActivity extends AppCompatActivity{
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -194,12 +196,20 @@ public class CircleMenuActivity extends AppCompatActivity{
                 childLayout.setBackgroundResource(R.drawable.cat_pronouns);
             }
         });
-    }
 
-    public void startDetails(String a){
-        editor.putString("category", a);
-        editor.commit();
-        Intent intent = new Intent(CircleMenuActivity.this, ItemListActivity.class);
-        startActivity(intent);
+
+        childLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (categoryTitle.getText().toString().length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Ангилал сонгоно уу !", Toast.LENGTH_SHORT).show();
+                } else {
+                    editor.putString("category", categoryTitle.getText().toString());
+                    editor.commit();
+                    Intent intent = new Intent(CircleMenuActivity.this, ItemListActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 }

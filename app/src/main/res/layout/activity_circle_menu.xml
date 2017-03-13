@@ -13,14 +13,14 @@
         android:layout_centerInParent="true">
     </mn.signlanguage.widgets.CircleMenu>
 
-    <mn.signlanguage.widgets.CircleMenu
+    <RelativeLayout
         android:id="@+id/circlelayoutChild"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="-250dp"
         android:background="@drawable/bg_circle_child"
         android:layout_centerInParent="true">
-    </mn.signlanguage.widgets.CircleMenu>
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -31,6 +32,8 @@ public class CircleMenuActivity extends AppCompatActivity{
         editor = sharedPreferences.edit();
 
         CircleMenu circleMenu = (CircleMenu) findViewById(R.id.circlelayout);
+        final RelativeLayout childLayout = (RelativeLayout) findViewById(R.id.circlelayoutChild);
+        final TextView categoryTitle = (TextView)findViewById(R.id.categoryTitle);
 
         View catAnimal = LayoutInflater.from(this).inflate(R.layout.circle_menu_animal,circleMenu,false);
         View catAlphabet = LayoutInflater.from(this).inflate(R.layout.circle_menu_alphabet,circleMenu,false);
@@ -65,8 +68,8 @@ public class CircleMenuActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.alphabet_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_alphabet);
             }
         });
 
@@ -74,25 +77,25 @@ public class CircleMenuActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.animal_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
-            }
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_animals);
+                }
         });
 
         catClothes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.clothes_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_clothes);
             }
         });
         catColor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.color_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_colors);
             }
         });
 
@@ -100,8 +103,8 @@ public class CircleMenuActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.emotion_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_emotions);
             }
         });
 
@@ -109,8 +112,8 @@ public class CircleMenuActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.family_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_family);
             }
         });
 
@@ -118,8 +121,8 @@ public class CircleMenuActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.fruit_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_fruits);
             }
         });
 
@@ -127,8 +130,9 @@ public class CircleMenuActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.greeting_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_greetings);
+
             }
         });
 
@@ -136,8 +140,8 @@ public class CircleMenuActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.nature_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_nature);
             }
         });
 
@@ -145,18 +149,17 @@ public class CircleMenuActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.number_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_numbers);
             }
         });
-
 
         catProfession.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.profession_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_profession);
             }
         });
 
@@ -164,8 +167,8 @@ public class CircleMenuActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.pronoun_text_view);
-                String a = cat.getText().toString();
-                startDetails(a);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_pronouns);
             }
         });
     }

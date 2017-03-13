@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -64,7 +65,29 @@ public class CircleMenuActivity extends AppCompatActivity{
 
         circleMenu.setChildViewsList(childList);
 
-        catAlphabet.setOnClickListener(new View.OnClickListener() {
+        ImageView imageAnimal = (ImageView)findViewById(R.id.animal_image_view);
+        ImageView imageAlphabet = (ImageView)findViewById(R.id.alphabet_image_view);
+        ImageView imageClothes = (ImageView)findViewById(R.id.clothes_image_view);
+        ImageView imageColor = (ImageView)findViewById(R.id.color_image_view);
+        ImageView imageEmotion = (ImageView)findViewById(R.id.emotion_image_view);
+        ImageView imageFamily = (ImageView)findViewById(R.id.family_image_view);
+        ImageView imageFruit = (ImageView)findViewById(R.id.fruit_image_view);
+        ImageView imageGreeting = (ImageView)findViewById(R.id.greeting_image_view);
+        ImageView imageNature = (ImageView)findViewById(R.id.nature_image_view);
+        ImageView imageNumber = (ImageView)findViewById(R.id.number_image_view);
+        ImageView imageProfession = (ImageView)findViewById(R.id.profession_image_view);
+        ImageView imagePronoun = (ImageView)findViewById(R.id.pronoun_image_view);
+
+        imageAnimal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView cat = (TextView)findViewById(R.id.animal_text_view);
+                categoryTitle.setText(cat.getText().toString());
+                childLayout.setBackgroundResource(R.drawable.cat_animals);
+            }
+        });
+
+        imageAlphabet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.alphabet_text_view);
@@ -73,7 +96,7 @@ public class CircleMenuActivity extends AppCompatActivity{
             }
         });
 
-        catAnimal.setOnClickListener(new View.OnClickListener() {
+        imageAnimal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.animal_text_view);
@@ -82,7 +105,7 @@ public class CircleMenuActivity extends AppCompatActivity{
                 }
         });
 
-        catClothes.setOnClickListener(new View.OnClickListener() {
+        imageClothes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.clothes_text_view);
@@ -90,7 +113,7 @@ public class CircleMenuActivity extends AppCompatActivity{
                 childLayout.setBackgroundResource(R.drawable.cat_clothes);
             }
         });
-        catColor.setOnClickListener(new View.OnClickListener() {
+        imageColor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.color_text_view);
@@ -99,7 +122,7 @@ public class CircleMenuActivity extends AppCompatActivity{
             }
         });
 
-        catEmotion.setOnClickListener(new View.OnClickListener() {
+        imageEmotion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.emotion_text_view);
@@ -108,7 +131,7 @@ public class CircleMenuActivity extends AppCompatActivity{
             }
         });
 
-        catFamily.setOnClickListener(new View.OnClickListener() {
+        imageFamily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.family_text_view);
@@ -117,7 +140,7 @@ public class CircleMenuActivity extends AppCompatActivity{
             }
         });
 
-        catFruit.setOnClickListener(new View.OnClickListener() {
+        imageFruit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.fruit_text_view);
@@ -126,7 +149,7 @@ public class CircleMenuActivity extends AppCompatActivity{
             }
         });
 
-        catGreeting.setOnClickListener(new View.OnClickListener() {
+        imageGreeting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.greeting_text_view);
@@ -136,7 +159,7 @@ public class CircleMenuActivity extends AppCompatActivity{
             }
         });
 
-        catNature.setOnClickListener(new View.OnClickListener() {
+        imageNature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.nature_text_view);
@@ -145,7 +168,7 @@ public class CircleMenuActivity extends AppCompatActivity{
             }
         });
 
-        catNumber.setOnClickListener(new View.OnClickListener() {
+        imageNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.number_text_view);
@@ -154,7 +177,7 @@ public class CircleMenuActivity extends AppCompatActivity{
             }
         });
 
-        catProfession.setOnClickListener(new View.OnClickListener() {
+        imageProfession.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.profession_text_view);
@@ -163,7 +186,7 @@ public class CircleMenuActivity extends AppCompatActivity{
             }
         });
 
-        catPronoun.setOnClickListener(new View.OnClickListener() {
+        imagePronoun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView cat = (TextView)findViewById(R.id.pronoun_text_view);

@@ -141,7 +141,6 @@ public class CircleMenuActivity extends AppCompatActivity{
             }
         });
 
-
         catNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

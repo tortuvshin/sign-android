@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.TreeMap;
 
 import pl.droidsonroids.gif.GifDrawable;
 
@@ -38,7 +39,7 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_vertical);
-        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true);
+        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -49,26 +50,17 @@ public class DetailsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(sharedPreferences.getString("item_title", ""));
         dImage = (ImageView)findViewById(R.id.details_image);
 
-        dImage.setImageDrawable(loadGifDrawable(getApplicationContext(), item));
+        if (item.toString().contains(".")) {
+            dImage.setImageDrawable(loadGifDrawable(getApplicationContext(), item+"gif"));
+        } else {
+            dImage.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), item+".JPG"));
+        }
 
         final AssetManager assetManager = getAssets();
 
         try {
             String[] filelist = assetManager.list("");
             filelistInSubfolder = assetManager.list(sharedPreferences.getString("item_category", ""));
-            if (filelist == null) {
-            } else {
-                for (int i=0; i<filelist.length; i++) {
-                    String filename = filelist[i];
-                }
-            }
-            if (filelistInSubfolder == null) {
-            } else {
-                for (int i=0; i<filelistInSubfolder.length; i++) {
-                    String filename = filelistInSubfolder[i];
-                }
-            }
-
         } catch (IOException e) {
             e.printStackTrace();
         } catch (NullPointerException npe) {
@@ -77,6 +69,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         mAdapter = new MyAdapter(filelistInSubfolder,filelistInSubfolder);
         mRecyclerView.setAdapter(mAdapter);
+
     }
 
     public GifDrawable loadGifDrawable(Context context, String path) {
@@ -117,18 +110,24 @@ public class DetailsActivity extends AppCompatActivity {
         public  class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             public TextView mTextView;
             public ImageView mImageView;
+
             public ViewHolder(View v) {
                 super(v);
                 v.setOnClickListener(this);
                 mTextView = (TextView)v.findViewById(R.id.txt);
                 mImageView = (ImageView) v.findViewById(R.id.img);
+
             }
 
             @Override
             public void onClick(View v) {
+                if (mTextView.getText().toString().contains(".")) {
+                    dImage.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mTextView.getText().toString()+"gif"));
+                } else {
 
-                dImage.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mTextView.getText().toString()+".gif"));
-                getSupportActionBar().setTitle(mTextView.getText().toString());
+                    dImage.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mTextView.getText().toString()+".JPG"));
+                }
+                getSupportActionBar().setTitle(mTextView.getText().toString().replace(".",""));
             }
         }
 
@@ -147,10 +146,11 @@ public class DetailsActivity extends AppCompatActivity {
         }
 
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.mTextView.setText(mDataset[position].replace(".gif", ""));
             if(mImages[position].contains(".gif")) {
+                holder.mTextView.setText(mDataset[position].replaceAll("([.])([A-Za-z])*", "."));
                 holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
             } else {
+                holder.mTextView.setText(mDataset[position].replaceAll("([.])([A-Za-z])*", ""));
                 holder.mImageView.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mImages[position]));
             }
         }

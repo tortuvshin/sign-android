@@ -20,7 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:divider="@null"
-        app:reverseLayout="true"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"

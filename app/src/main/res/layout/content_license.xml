@@ -14,6 +14,6 @@
         android:layout_height="wrap_content"
         android:text="@string/license_text"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"/>
+        android:paddingRight="@dimen/activity_horizontal_margin" />
 
 </android.support.v4.widget.NestedScrollView>

@@ -39,6 +39,8 @@ public class CircleMenuActivity extends AppCompatActivity{
         final RelativeLayout childLayout = (RelativeLayout) findViewById(R.id.circlelayoutChild);
         final TextView categoryTitle = (TextView)findViewById(R.id.categoryTitle);
 
+        childLayout.setBackgroundResource(R.drawable.cat_alphabet);
+
         View catAnimal = LayoutInflater.from(this).inflate(R.layout.circle_menu_animal,circleMenu,false);
         View catAlphabet = LayoutInflater.from(this).inflate(R.layout.circle_menu_alphabet,circleMenu,false);
         View catClothes = LayoutInflater.from(this).inflate(R.layout.circle_menu_clothes,circleMenu,false);

@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#edc9ea</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
+    <color name="dark">#ff303030</color>
 
     <color name="bg_screen1">#f64c73</color>
     <color name="bg_screen2">#20d2bb</color>
@@ -35,4 +36,6 @@
         <item>@color/dot_dark_screen3</item>
         <item>@color/dot_dark_screen4</item>
     </array>
+
+
 </resources>

@@ -18,7 +18,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_vertical"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="160dp"
         android:divider="@null"
         app:reverseLayout="true"
         android:orientation="horizontal"

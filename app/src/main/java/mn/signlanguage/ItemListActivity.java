@@ -40,6 +40,8 @@ public class ItemListActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     String[] filelistInSubfolder;
     String catName;
+    private SharedPreferences prefs;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +72,12 @@ public class ItemListActivity extends AppCompatActivity {
         categories.put("Өнгө", "catColors");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        SharedPreferences prefs = getSharedPreferences(PREFER_NAME, 0);
+
+        prefs = getSharedPreferences(PREFER_NAME, 0);
+        editor = prefs.edit();
         String select = prefs.getString("category", "");
+
         catName = categories.get(select);
-        Toast.makeText(getApplicationContext(), catName, Toast.LENGTH_LONG).show();
         getSupportActionBar().setTitle(select);
 
         final AssetManager assetManager = getAssets();
@@ -120,7 +124,9 @@ public class ItemListActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                String item = mTextView.getText().toString();
+                editor.putString("item", catName+"/"+mTextView.getText().toString());
+                editor.commit();
+                Toast.makeText(getApplicationContext(), catName+"/"+mTextView.getText().toString(), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(ItemListActivity.this, DetailsActivity.class);
                 startActivity(i);
             }

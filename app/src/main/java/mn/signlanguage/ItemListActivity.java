@@ -125,6 +125,8 @@ public class ItemListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editor.putString("item", catName+"/"+mTextView.getText().toString());
+                editor.putString("item_title", mTextView.getText().toString());
+                editor.putString("item_category", catName);
                 editor.commit();
                 Toast.makeText(getApplicationContext(), catName+"/"+mTextView.getText().toString(), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(ItemListActivity.this, DetailsActivity.class);

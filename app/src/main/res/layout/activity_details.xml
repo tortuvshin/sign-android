@@ -1,25 +1,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/details_image"
-        android:layout_above="@+id/recycler_vertical"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/recycler_vertical"
+        android:layout_alignParentTop="true" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollIndicators="bottom"
+        android:layout_height="150dp"
+        android:divider="@null"
+        app:reverseLayout="true"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="false" />
 
 </RelativeLayout>

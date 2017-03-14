@@ -149,7 +149,7 @@ public class ItemListActivity extends AppCompatActivity {
         }
 
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.mTextView.setText(mDataset[position].replace(".gif", ""));
+            holder.mTextView.setText(mDataset[position]);
             if(mImages[position].contains(".gif")) {
                 holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
             } else {

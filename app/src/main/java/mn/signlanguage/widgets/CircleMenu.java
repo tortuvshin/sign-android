@@ -1,4 +1,4 @@
-package mn.signlanguage;
+package mn.signlanguage.widgets;
 
 import android.content.Context;
 import android.os.Parcel;

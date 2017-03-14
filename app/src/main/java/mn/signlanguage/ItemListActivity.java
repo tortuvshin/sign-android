@@ -40,6 +40,8 @@ public class ItemListActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     String[] filelistInSubfolder;
     String catName;
+    private SharedPreferences prefs;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +52,6 @@ public class ItemListActivity extends AppCompatActivity {
 
     private void initComponents(){
 
-        String[] myDataset={"1","2","3","4","5","6","7","8","9",
-                "10","11","12","13","14","15","16","17","18","19",
-                "20","21","22","23","24","25","26","27", "28","29"};
         mRecyclerView = (RecyclerView) findViewById(R.id.list_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new GridLayoutManager(this,3);
@@ -73,10 +72,12 @@ public class ItemListActivity extends AppCompatActivity {
         categories.put("Өнгө", "catColors");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        SharedPreferences prefs = getSharedPreferences(PREFER_NAME, 0);
-        String select = prefs.getString("select", "");
+
+        prefs = getSharedPreferences(PREFER_NAME, 0);
+        editor = prefs.edit();
+        String select = prefs.getString("category", "");
+
         catName = categories.get(select);
-        Toast.makeText(getApplicationContext(), catName, Toast.LENGTH_LONG).show();
         getSupportActionBar().setTitle(select);
 
         final AssetManager assetManager = getAssets();
@@ -123,7 +124,11 @@ public class ItemListActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
+                editor.putString("item", catName+"/"+mTextView.getText().toString());
+                editor.commit();
+                Toast.makeText(getApplicationContext(), catName+"/"+mTextView.getText().toString(), Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(ItemListActivity.this, DetailsActivity.class);
+                startActivity(i);
             }
         }
 

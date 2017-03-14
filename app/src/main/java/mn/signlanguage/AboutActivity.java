@@ -50,6 +50,10 @@ public class AboutActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 3) {
+                    Intent a = new Intent(AboutActivity.this, LicenseActivity.class);
+                    startActivity(a);
+                }
                 if (position == 4) {
                     Intent sendInt = new Intent(Intent.ACTION_SEND);
                     sendInt.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));

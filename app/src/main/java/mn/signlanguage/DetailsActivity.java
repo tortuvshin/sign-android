@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -18,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import pl.droidsonroids.gif.GifDrawable;
 
@@ -86,6 +89,27 @@ public class DetailsActivity extends AppCompatActivity {
         return gifFromAssets;
     }
 
+    public Bitmap loadBitmapFromAssets(Context context, String path)
+    {
+        InputStream stream = null;
+        try
+        {
+            stream = context.getAssets().open(path);
+            return BitmapFactory.decodeStream(stream);
+        }
+        catch (Exception ignored) {} finally
+        {
+            try
+            {
+                if(stream != null)
+                {
+                    stream.close();
+                }
+            } catch (Exception ignored) {}
+        }
+        return null;
+    }
+
     public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         private String[] mDataset;
         private String[] mImages;
@@ -102,6 +126,7 @@ public class DetailsActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+
                 dImage.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mTextView.getText().toString()+".gif"));
                 getSupportActionBar().setTitle(mTextView.getText().toString());
             }
@@ -123,8 +148,11 @@ public class DetailsActivity extends AppCompatActivity {
 
         public void onBindViewHolder(ViewHolder holder, int position) {
             holder.mTextView.setText(mDataset[position].replace(".gif", ""));
-//            holder.mImageView.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mImages[position]));
-            holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
+            if(mImages[position].contains(".gif")) {
+                holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
+            } else {
+                holder.mImageView.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mImages[position]));
+            }
         }
 
         public int getItemCount() {

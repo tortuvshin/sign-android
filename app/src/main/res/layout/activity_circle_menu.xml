@@ -31,4 +31,13 @@
         android:layout_above="@+id/circlelayout"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:src="@android:drawable/ic_dialog_info"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/circlelayout"
+        android:layout_alignEnd="@+id/circlelayout" />
 </RelativeLayout>

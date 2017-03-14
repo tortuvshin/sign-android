@@ -124,7 +124,7 @@ public class ItemListActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                editor.putString("item", catName+"/"+mTextView.getText().toString());
+                editor.putString("item", catName+"/"+mTextView.getText().toString()+".gif");
                 editor.putString("item_title", mTextView.getText().toString());
                 editor.putString("item_category", catName);
                 editor.commit();
@@ -149,7 +149,7 @@ public class ItemListActivity extends AppCompatActivity {
         }
 
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.mTextView.setText(mDataset[position]);
+            holder.mTextView.setText(mDataset[position].replace(".gif", ""));
 //            holder.mImageView.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mImages[position]));
             holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
         }

@@ -26,6 +26,7 @@ public class DetailsActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     String[] filelistInSubfolder;
+    ImageView dImage;
     String catName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class DetailsActivity extends AppCompatActivity {
         String item = sharedPreferences.getString("item", "");
         catName = sharedPreferences.getString("item_category", "");
         getSupportActionBar().setTitle(sharedPreferences.getString("item_title", ""));
-        ImageView dImage = (ImageView)findViewById(R.id.details_image);
+        dImage = (ImageView)findViewById(R.id.details_image);
 
         dImage.setImageDrawable(loadGifDrawable(getApplicationContext(), item));
 
@@ -100,7 +101,8 @@ public class DetailsActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
+                dImage.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mTextView.getText().toString()+".gif"));
+                getSupportActionBar().setTitle(mTextView.getText().toString());
             }
         }
 
@@ -119,7 +121,7 @@ public class DetailsActivity extends AppCompatActivity {
         }
 
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.mTextView.setText(mDataset[position]);
+            holder.mTextView.setText(mDataset[position].replace(".gif", ""));
 //            holder.mImageView.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mImages[position]));
             holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
         }

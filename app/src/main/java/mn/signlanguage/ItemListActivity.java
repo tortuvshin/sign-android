@@ -125,8 +125,9 @@ public class ItemListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editor.putString("item", catName+"/"+mTextView.getText().toString());
+                editor.putString("item_title", mTextView.getText().toString());
+                editor.putString("item_category", catName);
                 editor.commit();
-                Toast.makeText(getApplicationContext(), catName+"/"+mTextView.getText().toString(), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(ItemListActivity.this, DetailsActivity.class);
                 startActivity(i);
             }
@@ -147,9 +148,13 @@ public class ItemListActivity extends AppCompatActivity {
         }
 
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.mTextView.setText(mDataset[position]);
-//            holder.mImageView.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mImages[position]));
-            holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
+            if(mImages[position].contains(".gif")) {
+                holder.mTextView.setText(mDataset[position].replaceAll("([.])([A-Za-z])*", "."));
+                holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
+            } else {
+                holder.mTextView.setText(mDataset[position].replaceAll("([.])([A-Za-z])*", ""));
+                holder.mImageView.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mImages[position]));
+            }
         }
 
         public int getItemCount() {

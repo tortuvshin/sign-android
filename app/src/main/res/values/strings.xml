@@ -32,6 +32,46 @@
     <string name="slide_title">САЙН УУ!</string>
     <string name="slide_desc">ДОХИОНЫ ХЭЛНИЙ ХӨТӨЧ!</string>
     <string name="title_activity_image">ImageActivity</string>
+    <string name="title_about">Тухай</string>
+    <string name="app_version">Version 1.0.0</string>
+    <string name="app_copyright">MIT License Copyright (c) 2017 Sign Language.</string>
+    <string name="app_email">toroo.byamba@gmail.com</string>
+    <string name="share_summary">Бусад хүмүүст хуваалцна уу</string>
+    <string name="rate_summary">Та үнэлгээ болон саналаа өгнө үү</string>
+    <string name="more_summary">Хөгжүүлэгчийн бусад програмууд.</string>
+    <string name="title_app_name">Програмын нэр</string>
+    <string name="title_app_version">Програмын хувилбар</string>
+    <string name="title_app_email">Мэйл хаяг</string>
+    <string name="title_app_copyright">Зохиогчын эрх</string>
+    <string name="title_app_share">Хуваалцах</string>
+    <string name="title_app_rate">Үнэлгээ өгөх</string>
+    <string name="title_app_more">Бусад програмууд</string>
+    <string name="more_apps">https://github.com/tortuvshin</string>
+    <string name="share_content"></string>
+    <string name="license_text">
+                                "MIT License
 
+    Copyright (c) 2017 Sign Language
 
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE."
+
+        "\n\n\n"
+
+    </string>
 </resources>

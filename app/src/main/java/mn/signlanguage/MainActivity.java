@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity
         mAdapter = new MyAdapter(myDataset,myImages);
         mRecyclerView.setAdapter(mAdapter);
 
-
         sharedPreferences = getSharedPreferences(PREFER_NAME, 0);
         editor = sharedPreferences.edit();
 

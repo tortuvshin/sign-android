@@ -19,7 +19,7 @@
             android:id="@+id/img"/>
 
         <TextView
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/dark"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

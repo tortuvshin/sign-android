@@ -24,17 +24,26 @@
         </activity>
         <activity
             android:name=".DetailsActivity"
-            android:label="@string/title_activity_details"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_details" />
         <activity
             android:name=".AboutActivity"
             android:label="@string/title_activity_about"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".CircleMenuActivity"
             android:label="@string/title_activity_circle_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ItemListActivity"></activity>
+        <activity
+            android:name=".ItemListActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".LicenseActivity"
+            android:parentActivityName=".AboutActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mn.signlanguage.AboutActivity" />>
+
+        </activity>
     </application>
 
 </manifest>

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -37,6 +38,8 @@ public class CircleMenuActivity extends AppCompatActivity{
         CircleMenu circleMenu = (CircleMenu) findViewById(R.id.circlelayout);
         final RelativeLayout childLayout = (RelativeLayout) findViewById(R.id.circlelayoutChild);
         final TextView categoryTitle = (TextView)findViewById(R.id.categoryTitle);
+
+        childLayout.setBackgroundResource(R.drawable.cat_alphabet);
 
         View catAnimal = LayoutInflater.from(this).inflate(R.layout.circle_menu_animal,circleMenu,false);
         View catAlphabet = LayoutInflater.from(this).inflate(R.layout.circle_menu_alphabet,circleMenu,false);
@@ -209,6 +212,15 @@ public class CircleMenuActivity extends AppCompatActivity{
                     Intent intent = new Intent(CircleMenuActivity.this, ItemListActivity.class);
                     startActivity(intent);
                 }
+            }
+        });
+
+        ImageButton imageButton = (ImageButton)findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CircleMenuActivity.this, AboutActivity.class);
+                startActivity(i);
             }
         });
     }

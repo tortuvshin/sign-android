@@ -39,7 +39,7 @@
     <string name="share_summary">Бусад хүмүүст хуваалцна уу</string>
     <string name="rate_summary">Та үнэлгээ болон саналаа өгнө үү</string>
     <string name="more_summary">Хөгжүүлэгчийн бусад програмууд.</string>
-    <string name="title_app_name">Програмын нэр</string>
+    <string name="title_app_name">Төслийн тухай</string>
     <string name="title_app_version">Програмын хувилбар</string>
     <string name="title_app_email">Мэйл хаяг</string>
     <string name="title_app_copyright">Зохиогчын эрх</string>
@@ -48,6 +48,34 @@
     <string name="title_app_more">Бусад програмууд</string>
     <string name="more_apps">https://github.com/tortuvshin</string>
     <string name="share_content"></string>
+    <string name="about_mn">
+        "
+        Санхүүжүүлсэн: Монгол дахь Америкийн Элчин сайдын яам: "Нийгэмд үйлчлэх оюутнууд" тэтгэлэг
+
+        Төслийн нэр: "Нөхөрлөлийн гүүр"
+
+        Багийн гишүүд:
+            1. Мухтар Жанар (багийн ахлагч)
+            2. Баттулга Болор
+            3. Доржпалам Солонго
+            4. Баярсайхан Уранзаяа
+            5. Батмөнх Болорчимэг
+            6. Батсайхан Оюу-Эрдэнэ
+            7. Анхбаяр Наранмандах
+            8. Ганзориг Анар
+            9. Атарзол Намуун
+            10. Цогтсайхан Амар-Эрдэнэ
+
+        Төслийн удирдагч:
+            Дамдингийн Чулуунтөмөр
+            Морган Томас
+
+        Програм хөгжүүлэгч:
+            Ц.Наранмандах
+            Б.Төртүвшин "
+    </string>
+    <string name="about_en"></string>
+
     <string name="license_text">
                                 "MIT License
 

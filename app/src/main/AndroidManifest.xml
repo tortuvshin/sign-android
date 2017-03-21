@@ -36,14 +36,16 @@
         <activity
             android:name=".ItemListActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".LicenseActivity"
+        <activity
+            android:name=".LicenseActivity"
             android:parentActivityName=".AboutActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="mn.signlanguage.AboutActivity" />>
-
+                android:value="mn.signlanguage.AboutActivity" />
+            >
         </activity>
+        <activity android:name=".ActivityProject"></activity>
     </application>
 
 </manifest>

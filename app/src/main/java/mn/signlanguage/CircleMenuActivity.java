@@ -219,7 +219,7 @@ public class CircleMenuActivity extends AppCompatActivity{
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CircleMenuActivity.this, AboutActivity.class);
+                Intent i = new Intent(CircleMenuActivity.this, ActivityProject.class);
                 startActivity(i);
             }
         });

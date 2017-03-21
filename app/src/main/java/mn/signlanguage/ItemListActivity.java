@@ -6,13 +6,10 @@ import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,13 +20,9 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
 
 import pl.droidsonroids.gif.GifDrawable;
-import pl.droidsonroids.gif.GifImageView;
 
 import static mn.signlanguage.MainActivity.PREFER_NAME;
 
@@ -83,20 +76,7 @@ public class ItemListActivity extends AppCompatActivity {
         final AssetManager assetManager = getAssets();
 
         try {
-            String[] filelist = assetManager.list("");
             filelistInSubfolder = assetManager.list(catName);
-            if (filelist == null) {
-            } else {
-                for (int i=0; i<filelist.length; i++) {
-                    String filename = filelist[i];
-                }
-            }
-            if (filelistInSubfolder == null) {
-            } else {
-                for (int i=0; i<filelistInSubfolder.length; i++) {
-                    String filename = filelistInSubfolder[i];
-                }
-            }
 
         } catch (IOException e) {
             e.printStackTrace();

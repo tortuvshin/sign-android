@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="mn.signlanguage.ActivityProject">
+
     <ImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -28,11 +29,17 @@
     <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/imageButton2"
-        android:src="@drawable/translate"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
+        android:id="@+id/imgButtonEn"
+        android:src="@drawable/uk"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imgButtonMn"
+        android:src="@drawable/mn"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/imgButtonEn"
+        android:layout_toStartOf="@+id/imgButtonEn" />
 </RelativeLayout>

@@ -1,13 +1,18 @@
 package mn.signlanguage;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
+import android.widget.ImageView;
 
 public class ActivityProject extends AppCompatActivity {
 
     WebView webView;
+    ImageView imgViewEN;
+    ImageView imgViewMN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,15 +21,17 @@ public class ActivityProject extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Төслийн тухай");
         webView = (WebView)findViewById(R.id.pWebView);
-        String mn = "<!DOCTYPE html>\n" +
+        imgViewEN = (ImageView) findViewById(R.id.imgButtonEn);
+        imgViewMN = (ImageView) findViewById(R.id.imgButtonMn);
+        final String mn = "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<body>\n" +
                 "\n" +
-                "<p>Санхүүжүүлсэн: Монгол дахь Америкийн Элчин сайдын яам: \"Нийгэмд үйлчлэх оюутнууд\" тэтгэлэг</p>\n" +
+                "<p>Санхүүжүүлсэн: Монгол дахь Америкийн Элчин сайдын яам: \"Нийгэмд үйлчлэх оюутнууд\" тэтгэлэг</p>" +
                 "\n" +
                 "<p>Төслийн нэр: \"Нөхөрлөлийн гүүр\"</p>\n" +
                 "<p>Багийн гишүүд:</p>\n" +
-                "<p style=\"margin-left: 20px\">\n" +
+                "<p style=\"margin-left: 20px\">" +
                 "            1. Мухтар Жанар (багийн ахлагч)<br>\n" +
                 "            2. Баттулга Болор<br>\n" +
                 "            3. Доржпалам Солонго<br>\n" +
@@ -37,12 +44,12 @@ public class ActivityProject extends AppCompatActivity {
                 "            10. Цогтсайхан Амар-Эрдэнэ<br>\n" +
                 "            </p>\n" +
                 "<p>Төслийн удирдагч:</p>\n" +
-                "<p style=\"margin-left:20px\">\n" +
+                "<p style=\"margin-left:20px\">" +
                 "            Дамдингийн Чулуунтөмөр<br>\n" +
                 "            Морган Томас<br></p>\n" +
                 "\n" +
                 "<p> Програм хөгжүүлэгч:</p>\n" +
-                "<p style=\"margin-left:20px\">\n" +
+                "<p style=\"margin-left:20px\">" +
                 "            Ц.Наранмандах<br>\n" +
                 "            Б.Төртүвшин <br></p>\n" +
                 "\n" +
@@ -50,7 +57,7 @@ public class ActivityProject extends AppCompatActivity {
                 "</body>\n" +
                 "</html>\n";
 
-        String a = "<!DOCTYPE html>\n" +
+        final String en = "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<body>\n" +
                 "\n" +
@@ -84,6 +91,21 @@ public class ActivityProject extends AppCompatActivity {
                 "</body>\n" +
                 "</html>\n";
         webView.loadData(mn, "text/html; charset=utf-8", "utf-8");
+
+        imgViewEN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                webView.loadData(en,"text/html; charset=utf-8", "utf-8");
+            }
+        });
+
+
+        imgViewMN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                webView.loadData(mn,"text/html; charset=utf-8", "utf-8");
+            }
+        });
     }
 
     @Override

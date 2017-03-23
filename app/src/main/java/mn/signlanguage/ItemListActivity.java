@@ -20,6 +20,9 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 
 import pl.droidsonroids.gif.GifDrawable;
@@ -84,6 +87,8 @@ public class ItemListActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Алдаа гарлаа !!!", Toast.LENGTH_LONG).show();
         }
 
+        Collections.sort(Arrays.asList(filelistInSubfolder), String.CASE_INSENSITIVE_ORDER);
+
         mAdapter = new MyAdapter(filelistInSubfolder,filelistInSubfolder);
         mRecyclerView.setAdapter(mAdapter);
     }
@@ -128,12 +133,15 @@ public class ItemListActivity extends AppCompatActivity {
         }
 
         public void onBindViewHolder(ViewHolder holder, int position) {
-            if(mImages[position].contains(".gif")) {
-                holder.mTextView.setText(mDataset[position].replaceAll("([.])([A-Za-z])*", "."));
-                holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
-            } else {
+            if(mImages[position].contains(".JPG")) {
+
                 holder.mTextView.setText(mDataset[position].replaceAll("([.])([A-Za-z])*", ""));
                 holder.mImageView.setImageBitmap(loadBitmapFromAssets(getApplicationContext(), catName+"/"+mImages[position]));
+
+            } else {
+
+                holder.mTextView.setText(mDataset[position].replaceAll("([.])([A-Za-z])*", "."));
+                holder.mImageView.setImageDrawable(loadGifDrawable(getApplicationContext(), catName+"/"+mImages[position]));
             }
         }
 

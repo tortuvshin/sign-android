@@ -9,7 +9,7 @@
      <a href="https://github.com/tortuvshin/sign-android/fork">
         <img src="https://img.shields.io/github/forks/tortuvshin/sign-android.svg?style=social&label=Fork"
             alt="Forks"></a>
-    <a href="https://github.com/tortuvshin/sign-android/stargers">
+    <a href="https://github.com/tortuvshin/sign-android/stargazers">
         <img src="https://img.shields.io/github/stars/tortuvshin/sign-android.svg?style=social&label=Stars"
             alt="Stars"></a>
     <a href="https://github.com/tortuvshin/">

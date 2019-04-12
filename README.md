@@ -9,6 +9,7 @@
      <a href="https://github.com/tortuvshin/sign-android/fork">
         <img src="https://img.shields.io/github/forks/tortuvshin/sign-android.svg?style=social&label=Fork"
             alt="Forks"></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Ftortuvshin%2Fsign-android?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftortuvshin%2Fsign-android.svg?type=shield"/></a>
     <a href="https://github.com/tortuvshin/sign-android/stargazers">
         <img src="https://img.shields.io/github/stars/tortuvshin/sign-android.svg?style=social&label=Stars"
             alt="Stars"></a>
@@ -22,6 +23,9 @@
         <img src="https://img.shields.io/twitter/url/https/github.com/tortuvshin/sign-android.svg?style=social"
             alt="Tweet"></a>
 </p>
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftortuvshin%2Fsign-android.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftortuvshin%2Fsign-android?ref=badge_large)
 
 ### Download It
 

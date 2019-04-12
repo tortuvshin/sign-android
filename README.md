@@ -44,7 +44,6 @@
 
 ### License
 
-`GNU General Public License v3.0`
 > Copyright (C) 2019 Byambaa Turtuvshin.  
 > GNU General Public License v3.0  
 > (See the [LICENSE](LICENSE) file for the whole license text.)

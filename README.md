@@ -24,9 +24,6 @@
             alt="Tweet"></a>
 </p>
 
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftortuvshin%2Fsign-android.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftortuvshin%2Fsign-android?ref=badge_large)
-
 ### Download It
 
 <a href="https://play.google.com/store/apps/details?id=mn.sign">
@@ -47,4 +44,9 @@
 
 ### License
 
-`MIT License`
+`GNU General Public License v3.0`
+> Copyright (C) 2019 Byambaa Turtuvshin.  
+> GNU General Public License v3.0  
+> (See the [LICENSE](LICENSE) file for the whole license text.)
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftortuvshin%2Fsign-android.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftortuvshin%2Fsign-android?ref=badge_large)
